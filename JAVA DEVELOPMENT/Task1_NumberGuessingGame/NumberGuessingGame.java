@@ -13,7 +13,7 @@ public class NumberGuessingGame {
 
         do {
             int randomNumber = random.nextInt(100) + 1;
-            int attempts = 5;
+            int attempts = 10;
             boolean guessedCorrectly = false;
 
             System.out.println("\n===== Number Guessing Game =====");

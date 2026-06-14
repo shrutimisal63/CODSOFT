@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Shruti Misal",
+        "phone": "9011175508",
+        "email": "shrutimisal@gmail.com",
+        "address": "shikshk colony"
+    },
+    {
+        "name": "rahul patil",
+        "phone": "1234566789",
+        "email": "rahul@gmail.com",
+        "address": "nagpur"
+    },
+    {
+        "name": "nyna khot",
+        "phone": "3452678192",
+        "email": "nyna@gmail.com",
+        "address": "ichalkaranji"
+    },
+    {
+        "name": "srushti kale",
+        "phone": "4562739473",
+        "email": "srushti@gmail.com",
+        "address": "kolhapur"
+    }
+]

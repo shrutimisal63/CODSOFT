@@ -1,0 +1,3 @@
+Sneha Joshi,101,B,23/03/2006,Female,90474567829,sneha@gmail.com
+Rohan Patil,102,C,24/06/2007,Male,7872800901,rohan@gmail.com
+Anjali Patil,103,B,26/04/2006,Female,987654637,anjali2gmail.com

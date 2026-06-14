@@ -252,4 +252,4 @@ public class StudentManagementSystem extends JFrame {
                 StudentManagementSystem::new
         );
     }
-}
+} 

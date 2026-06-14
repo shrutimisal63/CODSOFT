@@ -1,0 +1,26 @@
+[
+    {
+        "task": "complete pyhton intership",
+        "priority": "High",
+        "completed": true,
+        "time": "14-06-2026 12:22"
+    },
+    {
+        "task": "prepare linked in post",
+        "priority": "Medium",
+        "completed": false,
+        "time": "14-06-2026 12:22"
+    },
+    {
+        "task": "Upload Project to GitHub",
+        "priority": "Medium",
+        "completed": false,
+        "time": "14-06-2026 12:27"
+    },
+    {
+        "task": "Revise data science notes",
+        "priority": "Medium",
+        "completed": false,
+        "time": "14-06-2026 12:27"
+    }
+]
