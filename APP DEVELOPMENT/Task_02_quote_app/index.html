@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Explorer App</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#0f172a,#4f46e5,#9333ea);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN */
+.loginBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginCard {
+    width: 280px;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+/* APP */
+.app {
+    display: none;
+}
+
+.card {
+    width: 380px;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg,#4f46e5,#9333ea);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* SEARCH */
+.searchBox {
+    padding: 10px;
+}
+
+.searchBox input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* QUOTE BOX */
+.quote {
+    margin: 10px;
+    padding: 12px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    font-size: 14px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.primary { background:#4f46e5; color:white; }
+
+/* SCREEN */
+.screen {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="loginBox" id="login">
+    <div class="loginCard">
+        <h2>💡 Quote Explorer</h2>
+        <input id="user" placeholder="Username">
+        <input id="pass" type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- APP -->
+<div class="app" id="app">
+
+<div class="card">
+
+    <div class="header">
+        <h3>📚 Quote Explorer</h3>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="searchBox">
+        <input id="search" placeholder="Search quotes..." oninput="renderQuotes()">
+        <button class="primary" onclick="newQuote()">🔄 New Quote</button>
+    </div>
+
+    <!-- QUOTES -->
+    <div class="screen" id="quoteList"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let quotes = [
+    "Believe in yourself and all that you are.",
+    "Success starts with discipline.",
+    "Small steps lead to big success.",
+    "Stay focused and never quit.",
+    "Dream big and work hard.",
+    "Your mindset creates your future.",
+    "Consistency beats motivation.",
+    "Push yourself every day."
+];
+
+let current = "";
+
+/* LOGIN */
+function login(){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    renderQuotes();
+}
+
+/* NEW QUOTE */
+function newQuote(){
+    current = quotes[Math.floor(Math.random()*quotes.length)];
+    alert("💡 New Quote: " + current);
+}
+
+/* RENDER QUOTES + SEARCH */
+function renderQuotes(){
+    let list = document.getElementById("quoteList");
+    let search = document.getElementById("search").value.toLowerCase();
+
+    list.innerHTML = "";
+
+    let filtered = quotes.filter(q => q.toLowerCase().includes(search));
+
+    filtered.forEach(q => {
+        list.innerHTML += `
+        <div class="quote">💡 ${q}</div>
+        `;
+    });
+}
+
+/* AUTO REFRESH QUOTES EVERY 5 SEC */
+setInterval(renderQuotes, 5000);
+
+</script>
+
+</body>
+</html>
